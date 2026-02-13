@@ -233,8 +233,9 @@ function finishQuestions() {
 
     extraContent.innerHTML = `
         <p>See you.</p>
-        <button onclick="window.open('https://t.me/aniket_pangri','_blank')">
-            Message me on Telegram 💬
+        <button onclick="window.open('https://wa.me/918296190554?text=Hi%20Aniket%20😉
+','_blank')">
+            Message me on Whatsapp 💬
         </button>
     `;
 }
@@ -255,6 +256,7 @@ function notInterested() {
         <p>No pressure. No hard feelings.</p>
     `;
 }
+
 
 
 
