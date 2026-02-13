@@ -148,10 +148,10 @@ noBtn.addEventListener("click", function () {
     noBtn.style.display = "none";
 
     extraContent.innerHTML = `
-        <h1>Bold move 💔</h1>
-        <p>But I respect honesty.</p>
-        <button onclick="tryAgain()">I want to try again.</button>
-        <button onclick="notInterested()">Appreciate your efforts, but I’m not interested.</button>
+        <div style="margin-top: 30px;">
+            <button onclick="tryAgain()">I want to try again.</button>
+            <button onclick="notInterested()">Appreciate your efforts, but I’m not interested.</button>
+        </div>
     `;
 }
 
@@ -250,5 +250,6 @@ function notInterested() {
         <p>No pressure. No hard feelings.</p>
     `;
 }
+
 
 
