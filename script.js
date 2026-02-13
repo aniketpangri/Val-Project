@@ -147,7 +147,7 @@ noBtn.addEventListener("click", function () {
     yesBtn.style.display = "none";
     noBtn.style.display = "none";
 
-    document.querySelector(".container").innerHTML = `
+    extraContent.innerHTML = `
         <h1>Bold move 💔</h1>
         <p>But I respect honesty.</p>
         <button onclick="tryAgain()">I want to try again.</button>
@@ -250,4 +250,5 @@ function notInterested() {
         <p>No pressure. No hard feelings.</p>
     `;
 }
+
 
