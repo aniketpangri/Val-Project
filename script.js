@@ -138,13 +138,23 @@ noBtn.addEventListener("click", function () {
     }
 
     else if (page === 4) {
-        sendTelegramMessage("She pressed NO again 💀");
-        
-        title.innerText = "Bold move 💔";
-        subtitle.innerText = "I respect confidence.";
-        yesBtn.style.display = "none";
-        noBtn.style.display = "none";
-    }
+
+    sendTelegramMessage("She pressed NO again 💀");
+
+    title.innerText = "Bold move 💔";
+    subtitle.innerText = "But I respect honesty.";
+
+    yesBtn.style.display = "none";
+    noBtn.style.display = "none";
+
+    document.querySelector(".container").innerHTML = `
+        <h1>Bold move 💔</h1>
+        <p>But I respect honesty.</p>
+        <button onclick="tryAgain()">I want to try again.</button>
+        <button onclick="notInterested()">Appreciate your efforts, but I’m not interested.</button>
+    `;
+}
+
 });
 
 // --------------------
@@ -221,6 +231,23 @@ function finishQuestions() {
         <h1>Good. I like your energy 😌</h1>
         <p>You know where to find me.</p>
         <p>See You</p>
+    `;
+}
+
+function tryAgain() {
+
+    sendTelegramMessage("She chose to try again 🔁");
+
+    location.reload();
+}
+
+function notInterested() {
+
+    sendTelegramMessage("She is not interested ❌");
+
+    document.querySelector(".container").innerHTML = `
+        <h1>Thank you for being honest ❤️</h1>
+        <p>No pressure. No hard feelings.</p>
     `;
 }
 
