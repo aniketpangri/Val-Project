@@ -130,12 +130,16 @@ yesBtn.addEventListener("click", function () {
 noBtn.addEventListener("click", function () {
 
     if (page === 3) {
+        sendTelegramMessage("She pressed NO on serious page 💔");
+        
         page = 4;
         title.innerText = "You might have pressed No by mistake 😉";
         subtitle.innerText = "Let’s try that again.";
     }
 
     else if (page === 4) {
+        sendTelegramMessage("She pressed NO again 💀");
+        
         title.innerText = "Bold move 💔";
         subtitle.innerText = "I respect confidence.";
         yesBtn.style.display = "none";
@@ -219,3 +223,4 @@ function finishQuestions() {
         <p>See You</p>
     `;
 }
+
