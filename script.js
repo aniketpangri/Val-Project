@@ -232,6 +232,9 @@ function finishQuestions() {
         <h1>Good. I like your energy 😌</h1>
         <p>You know where to find me.</p>
         <p>See You</p>
+        <button onclick="window.open('https://t.me/aniket_pangri','_blank')">
+    Message me on Telegram 💬
+</button>
     `;
 }
 
@@ -251,6 +254,7 @@ function notInterested() {
         <p>No pressure. No hard feelings.</p>
     `;
 }
+
 
 
 
