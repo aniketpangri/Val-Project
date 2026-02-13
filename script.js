@@ -228,13 +228,14 @@ function finishQuestions() {
 
     sendTelegramMessage("Swipe Answers:\n" + answers.join("\n"));
 
-    document.querySelector(".container").innerHTML = `
-        <h1>Good. I like your energy 😌</h1>
-        <p>You know where to find me.</p>
-        <p>See You</p>
+    title.innerText = "Good. I like your energy 😌";
+    subtitle.innerText = "You know where to find me.";
+
+    extraContent.innerHTML = `
+        <p>See you.</p>
         <button onclick="window.open('https://t.me/aniket_pangri','_blank')">
-    Message me on Telegram 💬
-</button>
+            Message me on Telegram 💬
+        </button>
     `;
 }
 
@@ -254,6 +255,7 @@ function notInterested() {
         <p>No pressure. No hard feelings.</p>
     `;
 }
+
 
 
 
