@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3, #a18cd1);
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    color: white;
+    max-width: 500px;
+    padding: 40px;
+    animation: fadeIn 0.8s ease;
+}
+
+h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.5rem;   /* larger subtitle */
+    margin-top: 15px;
+    line-height: 1.6;
+}
+
+button {
+    padding: 18px 30px;   /* larger buttons */
+    margin: 16px;
+    border: none;
+    border-radius: 40px;
+    font-size: 1.3rem;   /* bigger button text */
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#yesBtn {
+    background: white;
+    color: #ff4b5c;
+}
+
+#yesBtn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255,255,255,0.7);
+}
+
+#noBtn {
+    background: rgba(255,255,255,0.3);
+    color: white;
+    backdrop-filter: blur(5px);
+    position: absolute;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* Floating Hearts */
+.hearts span {
+    position: absolute;
+    bottom: -20px;
+    font-size: 20px;
+    animation: floatUp 6s linear infinite;
+}
+
+@keyframes floatUp {
+    0% {transform: translateY(0); opacity: 1;}
+    100% {transform: translateY(-100vh); opacity: 0;}
+}
+
+#confettiCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
