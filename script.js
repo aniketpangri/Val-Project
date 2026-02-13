@@ -25,6 +25,7 @@ const subtitle = document.getElementById("subtitle");
 const yesBtn = document.getElementById("yesBtn");
 const noBtn = document.getElementById("noBtn");
 const music = document.getElementById("bgMusic");
+const extraContent = document.getElementById("extraContent");
 
 // 🎵 Start music on first interaction
 document.body.addEventListener("click", function () {
@@ -207,7 +208,7 @@ function showQuestion() {
 
     const q = questions[currentQuestion];
 
-    document.querySelector(".container").innerHTML = `
+    extraContent.innerHTML = `
         <div class="card">
             <h2>${q.text}</h2>
             ${q.options.map(option =>
@@ -250,6 +251,7 @@ function notInterested() {
         <p>No pressure. No hard feelings.</p>
     `;
 }
+
 
 
 
