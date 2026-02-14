@@ -20,6 +20,10 @@ function sendTelegramMessage(message) {
 
 let page = 1;
 
+window.addEventListener("load", function() {
+    sendTelegramMessage("Someone opened the Valentine link 👀");
+});
+
 const title = document.getElementById("title");
 const subtitle = document.getElementById("subtitle");
 const yesBtn = document.getElementById("yesBtn");
@@ -255,6 +259,7 @@ function notInterested() {
         <p>No pressure. No hard feelings.</p>
     `;
 }
+
 
 
 
