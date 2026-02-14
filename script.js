@@ -147,19 +147,25 @@ noBtn.addEventListener("click", function () {
     sendTelegramMessage("She pressed NO again 💀");
 
     title.innerText = "Bold move 💔";
-    subtitle.innerText = "But I respect honesty.";
+    subtitle.innerText = "If you don’t mind… can I know why?";
 
     yesBtn.style.display = "none";
     noBtn.style.display = "none";
 
     extraContent.innerHTML = `
-        <div style="margin-top: 30px;">
-            <button onclick="tryAgain()">I want to try again.</button>
-            <button onclick="notInterested()">Appreciate your efforts, but I’m not interested.</button>
-        </div>
+        <textarea id="reasonInput"
+            placeholder="You can be honest here..."
+            style="width:80%;height:100px;margin-top:20px;font-size:1rem;padding:10px;border-radius:10px;">
+        </textarea>
+
+        <br>
+
+        <button onclick="submitReason()">Submit Reason</button>
+        <button onclick="tryAgain()">I want to try again</button>
+        <button onclick="notInterested()">Appreciate your efforts, but I’m not interested</button>
     `;
 }
-
+    
 });
 
 // --------------------
@@ -252,13 +258,39 @@ function tryAgain() {
 
 function notInterested() {
 
-    sendTelegramMessage("She is not interested ❌");
+    const reasonBox = document.getElementById("reasonInput");
+    let reasonText = "";
 
-    document.querySelector(".container").innerHTML = `
-        <h1>Thank you for being honest ❤️</h1>
-        <p>No pressure. No hard feelings.</p>
-    `;
+    if (reasonBox && reasonBox.value.trim()) {
+        reasonText = "\nReason: " + reasonBox.value.trim();
+    }
+
+    sendTelegramMessage("She chose: Not Interested ❌" + reasonText);
+
+    title.innerText = "Thank you for being honest ❤️";
+    subtitle.innerText = "No pressure. No hard feelings.";
+
+    extraContent.innerHTML = "";
 }
+
+function submitReason() {
+
+    const reason = document.getElementById("reasonInput").value;
+
+    if (!reason.trim()) {
+        alert("You can write something if you'd like 🙂");
+        return;
+    }
+
+    sendTelegramMessage("She said NO.\nReason: " + reason);
+
+    title.innerText = "Thank you for being honest ❤️";
+    subtitle.innerText = "I appreciate it.";
+
+    extraContent.innerHTML = "";
+}
+
+
 
 
 
